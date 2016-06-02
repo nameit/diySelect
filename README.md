@@ -5,4 +5,6 @@
 ## 依赖
 jquery.js, pin.js。
 
+## todo
+多选
  

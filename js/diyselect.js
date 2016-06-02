@@ -266,6 +266,7 @@ DiySelect.prototype = {
     },
 
     setupSelect: function () {
+        // 单选默认第一个被selected
         var checkText = this.options.checkText || this.option.filter(':selected').text();
 
         // 初始选择（可设置）
