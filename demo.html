@@ -76,11 +76,69 @@ span.js-small-select {
         <option value="前端工程师">前端工程师</option>
         <option value="java开发工程师">java开发工程师</option>
     </select>
+    <h3>placeholder类型</h3>
+    <select name="occupation" id="sports">
+        <option value="羽毛球">羽毛球</option>
+        <option value="乒乓球">乒乓球</option>
+        <option value="游泳">游泳</option>
+        <option value="旱冰">旱冰</option>
+    </select>
+    <h3>自定义宽度</h3>
+    <select name="occupation" id="address">
+        <option value="杭州">杭州</option>
+        <option value="中国浙江省杭州市滨江区">中国浙江省杭州市滨江区</option>
+        <option value="银河系地球中华人民共和国浙江省杭州市滨江区新光大道">银河系地球中华人民共和国浙江省杭州市滨江区新光大道</option>
+    </select>
+    <h3>限制最大下拉菜单数</h3>
+    <select name="occupation" id="color">
+        <option value="红">红</option>
+        <option value="黄">黄</option>
+        <option value="蓝">蓝</option>
+        <option value="绿">绿</option>
+        <option value="青">青</option>
+        <option value="靛">靛</option>
+        <option value="紫">紫</option>
+    </select>
+    <h3>点击前事件</h3>
+    <select name="occupation" id="choose1">
+        <option value="小红">小红</option>
+        <option value="晓琳">晓琳</option>
+        <option value="仙子">仙子</option>
+    </select>
+    <h3>选择后事件</h3>
+    <select name="occupation" id="choose2">
+        <option value="小红">小红</option>
+        <option value="晓琳">晓琳</option>
+        <option value="仙子">仙子</option>
+    </select>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/pin.js"></script>
 <script type="text/javascript" src="js/diyselect.js"></script>
     <script type="text/javascript">
         $('.diySelect').diySelect();
+        $('#sports').diySelect({
+            checkText:'你喜欢什么运动？'
+        });
+        $('#address').diySelect({
+            checkText:'你住哪儿？',
+            width:400
+        });
+        $('#color').diySelect({
+            checkText:'你喜欢什么颜色？',
+            maxLength:5
+        });
+        $('#choose1').diySelect({
+            checkText:'你喜欢哪个女生？',
+            beforeSelect:function () {
+                alert('你单身吗？');
+            }
+        });
+        $('#choose2').diySelect({
+            checkText:'你喜欢谁？',
+            afterChoose:function (data) {
+                alert('你选择的人是'+data+',不好意思他是男的\n原生select选择的值是'+document.getElementById('choose2').value);
+            }
+        });
     </script>
 </body>
 </html>

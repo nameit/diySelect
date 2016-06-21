@@ -74,6 +74,9 @@ DiySelect.prototype = {
             }
 
             that.chooseOption(text);
+            if (that.options.afterChoose) {
+                that.options.afterChoose.apply(that, [text]);
+            }
             $(select).trigger('change');
         });
 
@@ -180,6 +183,9 @@ DiySelect.prototype = {
                         if (active !== -1) {
                             var text = list.slice(active, active + 1).text();
                             that.chooseOption(text);
+                            if (that.options.afterChoose) {
+                                that.options.afterChoose.apply(that, [text]);
+                            }
                         }
 
                         that.hideOption();
@@ -341,9 +347,6 @@ DiySelect.prototype = {
             }
         }
 
-        if (this.options.afterChoose) {
-            this.options.afterChoose.apply(this, [text]);
-        }
     },
 
     isIE: function (ver) {
