@@ -111,6 +111,18 @@ span.js-small-select {
         <option value="晓琳">晓琳</option>
         <option value="仙子">仙子</option>
     </select>
+    <h3>默认选中晓琳</h3>
+    <select name="occupation" id="default">
+        <option value="小红">小红</option>
+        <option value="晓琳" selected="">晓琳</option>
+        <option value="仙子">仙子</option>
+    </select>
+    <br>
+    <span style="display:inline-block;">我哦</span>
+    <div style="position:absolute">
+        333
+    </div>
+    <span style="display:inline-block;">我哦2</span>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/pin.js"></script>
 <script type="text/javascript" src="js/diyselect.js"></script>
@@ -139,6 +151,7 @@ span.js-small-select {
                 alert('你选择的人是'+data+',不好意思他是男的\n原生select选择的值是'+document.getElementById('choose2').value);
             }
         });
+        $('#default').diySelect();
     </script>
 </body>
 </html>
